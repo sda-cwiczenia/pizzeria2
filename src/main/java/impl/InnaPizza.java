@@ -6,10 +6,10 @@ public class InnaPizza implements IPizza {
     private String name;
     private double price;
 
-    public InnaPizza() {
-        setName("Hawajska");
-        setPrice(15.5);
-    }
+//    public InnaPizza() {
+//        setName("Hawajska");
+//        setPrice(15.5);
+//    }
 
     public String getName() {
         return name;

@@ -7,9 +7,14 @@ public class MyPizza implements IPizza {
     private String name;
     private double price;
 
-    public MyPizza() {
-        setName("Margherita");
-        setPrice(12.5);
+//    public MyPizza() {
+//        setName("Margherita");
+//        setPrice(12.5);
+//    }
+
+    public MyPizza(String name, double price) {
+        this.name = name;
+        this.price = price;
     }
 
     public String getName() {
