@@ -1,9 +1,11 @@
 import api.IOrder;
 import api.IPizza;
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+import config.Config;
 import impl.InnaPizza;
 import impl.MyOrder;
 import impl.MyPizza;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Pizzeria {
@@ -14,14 +16,17 @@ public class Pizzeria {
 //        IPizza pizza = new InnaPizza();
 //        IOrder order = new MyOrder(pizza);
 
-        // Rozwiązanie na springu
+        // Rozwiązanie na springu z konfiguracją xml
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("konfiguracja.xml");
+//        MyOrder order = (MyOrder) context.getBean("myOrder");  // pierwszy sposób z klasą jako argument
+//        MyOrder order2 = context.getBean("innyOrder",MyOrder.class); // drugi sposób z rzutowaniem na typ
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("konfiguracja.xml");
-        MyOrder order = (MyOrder) context.getBean("myOrder");  // pierwszy sposób z klasą jako argument
-        MyOrder order2 = context.getBean("innyOrder",MyOrder.class); // drugi sposób z rzutowaniem na typ
+        // Rozwiązanie na springu z klasą konfiguracyjną
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+        MyOrder order = context.getBean("mojeZamowienie", MyOrder.class);
 
         // Logika biznesowa
-        order2.printOrder();
+        order.printOrder();
 
     }
 }
