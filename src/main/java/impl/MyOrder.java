@@ -2,12 +2,16 @@ package impl;
 
 import api.IOrder;
 import api.IPizza;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+
+@Component("mojeZamowienie")
 public class MyOrder implements IOrder {
 
     IPizza pizza;
 
-    public MyOrder(IPizza pizza) {
+    public MyOrder(@Qualifier("innaPizza") IPizza pizza) {
         this.pizza = pizza;
     }
 

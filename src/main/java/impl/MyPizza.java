@@ -1,7 +1,12 @@
 package impl;
 
 import api.IPizza;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
+@Component
+@PropertySource("pizza.properties")
 public class MyPizza implements IPizza {
 
     private String name;
@@ -12,7 +17,7 @@ public class MyPizza implements IPizza {
 //        setPrice(12.5);
 //    }
 
-    public MyPizza(String name, double price) {
+    public MyPizza(@Value("${moja.name}") String name, @Value("${moja.price}") double price) {
         this.name = name;
         this.price = price;
     }
