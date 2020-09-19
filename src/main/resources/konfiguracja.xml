@@ -11,17 +11,17 @@
         <constructor-arg name="name" value="Margherita"></constructor-arg>
         <constructor-arg name="price" value="12.5"></constructor-arg>
     </bean>
-    <bean id="innaPizza" class="impl.InnaPizza">
-        <property name="name" value="Moja Hawajska"></property>
-        <property name="price" value="17.5"></property>
-    </bean>
-    <bean id="myOrder" class="impl.MyOrder">
-        <!--        <property name="pizza" ref="myPizza"></property>-->
-        <constructor-arg ref="myPizza"/>
-    </bean>
-    <bean id="innyOrder" class="impl.MyOrder">
-        <!--        <property name="pizza" ref="myPizza"></property>-->
-        <constructor-arg ref="innaPizza"/>
-    </bean>
+<!--    <bean id="innaPizza" class="impl.InnaPizza">-->
+<!--        <property name="name" value="Moja Hawajska"></property>-->
+<!--        <property name="price" value="17.5"></property>-->
+<!--    </bean>-->
+<!--    <bean id="myOrder" class="impl.MyOrder">-->
+<!--        &lt;!&ndash;        <property name="pizza" ref="myPizza"></property>&ndash;&gt;-->
+<!--        <constructor-arg ref="myPizza"/>-->
+<!--    </bean>-->
+<!--    <bean id="innyOrder" class="impl.MyOrder">-->
+<!--        &lt;!&ndash;        <property name="pizza" ref="myPizza"></property>&ndash;&gt;-->
+<!--        <constructor-arg ref="innaPizza"/>-->
+<!--    </bean>-->
 
 </beans>

@@ -6,14 +6,16 @@ import impl.MyOrder;
 import impl.MyPizza;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 
 @Configuration
+@ImportResource("konfiguracja.xml")
 public class Config {
 
-    @Bean
-    IPizza myPizza() {
-        return new MyPizza("Margherita", 22);
-    }
+//    @Bean(name = "mojaPizza")
+//    IPizza myPizza() {
+//        return new MyPizza("Margherita", 22);
+//    }
 
     @Bean(name = "mojeZamowienie")
     IOrder myOrder(IPizza pizza) {
