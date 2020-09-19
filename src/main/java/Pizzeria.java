@@ -25,8 +25,12 @@ public class Pizzeria {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
         MyOrder order = context.getBean("mojeZamowienie", MyOrder.class);
 
+        System.out.println("Obiekt order : "+order);
         // Logika biznesowa
-        order.printOrder();
+        //order.printOrder();
+
+        MyOrder order2 = context.getBean("mojeZamowienie", MyOrder.class);
+        System.out.println("Obiekt order2 : "+order);
 
     }
 }
